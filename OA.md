@@ -259,6 +259,36 @@ vector<int> visiting(vector<int> &red,vector<int>& blue, int bluecost){
 
 6. Leetcode 974
 
+7. odd string or even string
+
+<img width="375" alt="image" src="https://user-images.githubusercontent.com/81163933/182757126-fbf2dc0d-5ada-4f66-919f-9025b83b64c7.png">
+
+思路：利用奇偶性，只需要数有多少个odd number， 偶数个则结果为奇数（偶数个奇数的和为奇数），反之
+````C++
+string solve(int m, vector<string> s) {
+    // fill this function
+    
+    int count_odd = 0;
+    
+    for(auto & str : s){
+        bool have_even = false;
+        for(auto & c : str){
+            if((c - 'a') % 2 == 0){
+                have_even = true;
+            }
+        }//for
+        
+        if(!have_even){count_odd++;}
+    }
+    cout << count_odd << endl;
+    if(count_odd % 2 == 0){
+        return "EVEN";
+    }
+    return "ODD";
+
+}
+````
+
 
  
 
